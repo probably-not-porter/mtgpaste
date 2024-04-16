@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./paste.css">
+        <title>MTGPaste - Syntax</title>
+        <style>
+            #helptext{
+                padding: 20px; 
+                width: calc(100vw - 40px); 
+                height: 100vh;
+            }
+            .code {
+                color: rgb(176, 238, 176);
+                background-color: #f1f1f11c;
+                padding: 2px;
+                display: inline-block;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="helptext">
+            <h1>MTGPaste Syntax</h1>
+            <p1>A paste can contain any number of cards (allows up to 10,000 characters to be entered)<br>
+                Set numbers and other information will be ignored.<br>
+                Each card is represented by its first result on Gatherer that matches the name. <br>
+                Card names can be lower case. "Cancel" will render the same as "cancel".<br>
+                Each line must contain only one card with any of the formats outlined below.
+            </p1>
+
+            <h3>Xmage Format</h3>
+            <div class="code">
+                <p1>
+                    1 [M15:44] Aetherspouts<br>
+                    1 [H1R:10] Tribute Mage<br>
+                    1 [5ED:408] Winter Orb
+                <p1>
+            </div>
+
+            <h3>MTGO Format</h3>
+            <div class="code">
+                <p1>
+                    1 Aetherspouts<br>
+                    1 Tribute Mage<br>
+                    1 Winter Orb
+                </p1>
+            </div>
+
+            <h3>Arena Format</h3>
+            <div class="code">
+                <p1>
+                    1 Aetherspouts (M15) 44<br>
+                    1 Tribute Mage (H1R) 10<br>
+                    1 Winter Orb (5ED) 408
+                </p1>
+            </div>
+        </div>
+        <script defer data-domain="mtg.skate.plib.dev" src="https://plausible.skate.plib.dev/js/script.js"></script>
+    </body>
+</html>
