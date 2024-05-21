@@ -65,7 +65,7 @@ function deckbuilder(){
     <textarea maxlength="200" placeholder='Deck Notes' class='deckinput' id='notesInput'></textarea><br>
     <button onclick='createDeck()' id='create'>Create</button> 
     <button onclick="location.href='/syntax'">Syntax Reference</button> 
-    <button onclick="location.href='https://github.com/probably-not-porter/mtg-tools'">Github</button>
+    <button onclick="location.href='https://github.com/probably-not-porter/mtgpaste'">Github</button>
     <br><br><br><br>
 
     <p1><strong>How to use this tool</strong></p1>
@@ -91,7 +91,7 @@ async function render_list(deck){
     <br><br><br><br>
     <button onclick='location.href=location.origin'>Create new</button> 
     <button onclick="location.href='/syntax'">Syntax Reference</button> 
-    <button onclick="location.href='https://github.com/probably-not-porter/mtg-tools'">Github</button>
+    <button onclick="location.href='https://github.com/probably-not-porter/mtgpaste'">Github</button>
     `;
     
     // render deck
