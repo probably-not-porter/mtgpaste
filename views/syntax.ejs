@@ -30,30 +30,44 @@
                 Each line must contain only one card with any of the formats outlined below.
             </p1>
 
-            <h3>Xmage Format</h3>
+            <h3>Xmage Format (.dck)</h3>
+            <p1>Cards should be one line per card name in the form of [quantity] [set:setnum] [name].<br>
+                Sideboard Cards have the prefix "SB: ", with no separating blank lines.
+            </p1><br><br>
             <div class="code">
                 <p1>
                     1 [M15:44] Aetherspouts<br>
                     1 [H1R:10] Tribute Mage<br>
-                    1 [5ED:408] Winter Orb
+                    1 [5ED:408] Winter Orb<br>
+                    SB: 1 [XLN:222] Gishath, Sun's Avatar
                 <p1>
             </div>
 
-            <h3>MTGO Format</h3>
+            <h3>MTGO Format (.dek)</h3>
+            <p1>Cards should be one line per card name in the form of [quantity] [name].<br>
+                Sideboard Cards are separated by a blank line.
+            </p1><br><br>
             <div class="code">
                 <p1>
                     1 Aetherspouts<br>
                     1 Tribute Mage<br>
-                    1 Winter Orb
+                    1 Winter Orb<br>
+                    <br>
+                    1 Gishath, Sun's Avatar
                 </p1>
             </div>
 
-            <h3>Arena Format</h3>
+            <h3>Arena Format (.mtga)</h3>
+            <p1>Cards should be one line per card name in the form of [quantity] [name] [set] [setnum].<br>
+                Sideboard Cards are separated by a blank line.
+            </p1><br><br>
             <div class="code">
                 <p1>
                     1 Aetherspouts (M15) 44<br>
                     1 Tribute Mage (H1R) 10<br>
-                    1 Winter Orb (5ED) 408
+                    1 Winter Orb (5ED) 408<br>
+                    <br>
+                    1 Gishath, Sun's Avatar (XLN) 222
                 </p1>
             </div>
         </div>

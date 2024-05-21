@@ -41,7 +41,8 @@ function loadDeck(id){
         success: function(result) { 
             if (result != "" && result != null){
                 CARDLIST = result.text;
-                render_list(result.text,result.name,result.author,result.notes);
+                //render_list(result.text,result.name,result.author,result.notes);
+                render_list(result);
             }
             else{
                 document.getElementById("deck_container").innerHTML = `Decklist not found! <a href="${window.location.origin}">Why not make one?</a>`;
@@ -81,44 +82,28 @@ function deckbuilder(){
 }
 
 // ================= RENDER CARDLIST ================= //
-async function render_list(text,name,author,notes){
+async function render_list(deck){
     // render meta inf
-
     document.getElementById("sidebar").innerHTML = `
-    <h1>${name}</h1>
-    <h2>by ${author}</h2>
-    <p1>${notes}</p1>
+    <h1>${deck.name}</h1>
+    <h2>by ${deck.author}</h2>
+    <p1>${deck.notes}</p1>
     <br><br><br><br>
     <button onclick='location.href=location.origin'>Create new</button> 
     <button onclick="location.href='/syntax'">Syntax Reference</button> 
     <button onclick="location.href='https://github.com/probably-not-porter/mtg-tools'">Github</button>
-    
     `;
     
-
     // render deck
     document.getElementById("deck_container").innerHTML = "";
-    let cardlist = text.split('\n'); // get actual "list"
-    let maindeck_html = "";
-
-    // currently layout lines are removed
-    for (let card of cardlist){
-        console.log(card);
-        card = card.replace(/\[.+?]/g, "");
-        card = card.replace(/ *\([^)]*\) */g, "");
-
-        if (card.includes("SB: ")){
-            card = card.replace("SB: ", "");
-            maindeck_html += "<br>";
-        }
-        
-        cardls = card.split(/\s+/);
-        cardnum = cardls.shift();
-        cardname = cardls.join(" ");
-        console.log(cardnum,cardname);
+    maindeck_html = "";
+    for (const [cardname, cardnum] of Object.entries(deck.mainboard)) {
         maindeck_html += `<div><auto-card name="${cardname}">${cardnum} ${cardname}</auto-card></div>`;
     }
-    // append new html to container
+    maindeck_html += `<br>`;
+    for (const [cardname, cardnum] of Object.entries(deck.sideboard)) {
+        maindeck_html += `<div><auto-card name="${cardname}">${cardnum} ${cardname}</auto-card></div>`;
+    }
     document.getElementById("deck_container").innerHTML += maindeck_html;
 }
 

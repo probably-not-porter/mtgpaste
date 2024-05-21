@@ -4,7 +4,7 @@ var favicon =           require('serve-favicon');
 const { QuickDB } =     require("quick.db");
 const bodyParser =      require('body-parser');
 
-
+var convert = require('./convert');
 
 const db = new QuickDB();
 const app = express();
@@ -20,13 +20,14 @@ app.get('/fetch', async function(req, res) {
   });
 
 app.post('/create', jsonParser, async function(req, res) {
+    let deck = await convert.convMain(req.body.text);
     var id = Date.now().toString();
-    console.log(req.body)
     const newDeck = {
         name: req.body.name,
         author: req.body.author,
         id: id,
-        text: req.body.text,
+        mainboard: deck.mainboard,
+        sideboard: deck.sideboard,
         notes: req.body.notes
     };
     await db.set(id, newDeck);
