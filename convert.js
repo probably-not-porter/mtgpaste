@@ -15,6 +15,8 @@ async function getExceptions(url){
         getExceptions(card_exceptions.next_page);
     }
 }
+
+// Current Exception Paths
 getExceptions(`https://api.scryfall.com/cards/search?q="%2F%2F"&unique=cards&as=grid&order=name`);
 
 function testException(name){
@@ -90,30 +92,3 @@ module.exports = {
         return decklist_obj
     }
 };
-
-
-
-// ============== .dck ==============
-// 1 [M20:194] Shifting Ceratops
-// 1 [ORI:174] Elemental Bond
-// 1 [IKO:164] Migration Path
-// 1 [ISD:130] Blasphemous Act
-// SB: 1 [XLN:222] Gishath, Sun's Avatar
-
-
-// ============== .dek ==============
-// 1 Shifting Ceratops
-// 1 Elemental Bond
-// 1 Migration Path
-// 1 Blasphemous Act
-
-// 1 Gishath, Sun's Avatar
-
-
-// ============== .mtga ==============
-// 1 Shifting Ceratops (M20) 194
-// 1 Elemental Bond (ORI) 174
-// 1 Migration Path (IKO) 164
-// 1 Blasphemous Act (ISD) 130
-
-// 1 Gishath, Sun's Avatar (XLN) 222
