@@ -1,5 +1,5 @@
 # MTG Paste
-NodeJS/SQLite website to create and share decklists. Built to mimic Pokepast.es.
+NodeJS/SQLite website to create and share decklists. Built with [mtgify](https://mtgify.org/), and inspiration from [pokepast.es](https://pokepast.es/).
 
 # Database Structure
 Each deck has the following structure in the sqlite database:
