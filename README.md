@@ -4,20 +4,18 @@ NodeJS/SQLite website to create and share decklists. Built with [mtgify](https:/
 # Database Structure
 Each deck has the following structure in the sqlite database:
 ```json
-{
-    name: "Deck name",
-    author: "Deck Author",
-    id: 123123123,
-    mainboard: {
-        "Card Name 1": 1,
-        "Card Name 2": 4
-    },
-    sideboard: {
-        "Card Name 1": 2,
-        "Card Name 2": 2
-    },
-    notes: "User notes about deck"
-}
+name: "Deck name",
+author: "Deck Author",
+id: 123123123,
+mainboard: {
+    "Card Name 1": 1,
+    "Card Name 2": 4
+},
+sideboard: {
+    "Card Name 1": 2,
+    "Card Name 2": 2
+},
+notes: "User notes about deck"
 ```
 Decks are keyed by ID and accessible by the API.
 
