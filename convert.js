@@ -19,8 +19,8 @@ getExceptions(`https://api.scryfall.com/cards/search?q="%2F%2F"&unique=cards&as=
 
 function testException(name){
     for (let j = 0; j < exception_names.length; j++) {
-        let e = exception_names[j].toLowerCase();
-        if (e.includes(name.toLowerCase()) && e.split(" // ")[0] !=  e.split(" // ")[1]){
+        let e = exception_names[j];
+        if (e.toLowerCase().includes(name.toLowerCase()) && e.split(" // ")[0] !=  e.split(" // ")[1]){
             return e
         }
     }
