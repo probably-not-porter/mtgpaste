@@ -2,8 +2,7 @@ html, body{
     margin: 0;
     background-color: rgb(15, 15, 15);
     color: white;
-    height: 100vh;
-    width: 97vw;
+    width: 100%;
     padding: 0;
 }
 *{
